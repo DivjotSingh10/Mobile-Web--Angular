@@ -1,0 +1,188 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="angularmain.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="angularmain.js"></script>
+  <title>Divjot Chawla- A4</title>
+</head>
+
+<body>
+  <div id="top">
+    <h1>Assignment 4- Angular</h1>
+  </div>
+  <div class="main" ng-app="myApp" ng-controller="angController">
+    <div class="leftDiv">
+      <div class="sidenav">
+        <h2>Main Menu</h2>
+        <a href="#" ng-click="navigateTo('1')">What is Angular ?</a>
+        <a href="#" ng-click="navigateTo('2')">Concept 1 - Data Binding</a>
+        <a href="#" ng-click="navigateTo('3')">Concept 2 - Filters</a>
+        <a href="#" ng-click="navigateTo('4')">Concept 3 - Events</a>
+        <a href="#" ng-click="navigateTo('5')">Concept 4 - Input Validations</a>
+      </div>
+    </div>
+    <div class="rightDiv">
+      <div class="content">
+        <div id="introduction" ng-show="divId == '1'">
+          <h3>Introduction</h3>
+          <hr />
+          <p>
+            AngularJS is a very powerful JavaScript Framework. It is used in Single Page Application (SPA) projects.
+            It extends HTML DOM with additional attributes and makes it more responsive to user actions.
+            AngularJS is open source, completely free, and used by thousands of developers around the world
+          </p>
+          <h4> The main features of ANGULAR are as follows (but are not limited to) :</h4>
+       
+          <ul>
+            <li><b>DATA-BINDING</b> in AngularJS is the automatic synchronization of data between the model and view
+              components.
+              It works in a way that data-binding lets you treat the model as the single-source-of-truth in your
+              application.
+              The view is a projection of the model at all times. When the model changes, the view mirrors the change.
+            </li>
+            <br>
+            <li> <b>INPUT VALIDATION</b> You can improve overall data quality by validating user input for accuracy and
+              completeness.<br>
+              1. AngularJS offers client-side form validation. <br>
+              2. AngularJS monitors the state of the form and input fields (input, textarea, select), and lets you
+              notify the user about the current state.<br>
+              3. AngularJS also holds information about whether they have been touched, or modified, or not.<br>
+            </li><br>
+            <li> <b>FILTERS</b> Filters can be added in AngularJS to format data.It provides filters to transform data:<br>
+              1. <i>Date</i> - Format a date to a specified format.<br>
+              2. <i>Filter</i> -  Select a subset of items from an array.<br>
+              3. <i>JSON</i> -  Format an object to a JSON string.<br>
+              4. <i>Lowercase | Uppercase</i> -  Format a string to lower or upper case.<br>
+            </li><br>
+            <li><b>EVENTS</b> The event directives allows us to run AngularJS functions at certain user events.
+               An AngularJS event will not overwrite an HTML event, both events will be executed</li><br>
+          </ul>
+        </div>
+
+        <!--    -------------------------------------------------------------------------------------------  -->
+        <div id="directives" ng-show="divId == '2'">
+          <h3>Data Binding</h3>
+          <hr />
+          <p>DATA-BINDING in AngularJS is the automatic synchronization of data between the model and view components.
+             It works in a way that data-binding lets you treat the model as the single-source-of-truth in your application.
+              The view is a projection of the model at all times. When the model changes, the view mirrors the change.</p>
+          <h3>CODE</h3>
+          <code>
+          <pre id="data-binding-code"></pre>
+        </code>
+          <h3>OUTPUT</h3>
+          <div>
+            <div>
+              <p>Full Name : <input type="text" ng-model="namingModel" /></p>
+              <h1>You are {{namingModel}}</h1>
+            </div>
+          </div>
+          <h3>EXPLANATION</h3>
+          <p>
+            Data binding uses the ng-model directive. It worksin a way that our application now has a property called namingModel that
+            keeps track of the value of the input element. The ng-model directive
+            binds the input to the rest of the application(string). This variable can be
+            referred to throughtout the rest of our app with the {{ }} syntax.
+            Whenever the value of the input changes, the variable is also updated to the new value.
+          </p>
+        </div>
+
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+        <div id="filters" ng-show="divId == '3'">
+          <h3>Filters</h3>
+          <hr />
+          <p>
+            AngularJS provides filters to transform data. It ranges from currency, date, filter, 
+            JSON, limitTo, lowercase/uppercase.They can also be used to filter data in an array. 
+            This is a very powerful feature and is really helpful.Filters are used to modify the data.
+             They can be clubbed in expression or directives using pipe (|) character.  
+          </p>
+          <h3>CODE</h3>
+          <code>
+          <pre>
+            
+            &lt;div ng-app="myApp" ng-controller="costCtrl"&gt;
+
+            &lt;h1&gt;Price: <code ng-non-bindable>{{ price | currency }}</code>&lt;/h1&gt;
+
+            &lt;/div&gt;
+          </pre></code>
+          <h3>OUTPUT</h3>
+          <p>Enter your earning:</p>
+          <input type="text" ng-model="price" />
+          SALARY : {{ price | currency }}
+          <h3>EXPLANATION</h3>
+          <p>The above code snippet is a filter that converts a number input from user into currency format. This is done as a '$' sign is included
+            and thus symbolising a dollar value. Other than currency filter there are many other filters as described above. 
+          </p>
+        </div>
+
+<!--  ----------------------------------------------------------------------------------------------------------------  -->
+        <div id="agevents" ng-show="divId == '4'">
+          <h3>Events</h3>
+          <hr />
+          <p>
+            AngularJS provides variuos events that can help transform data. The variuos 
+            events are ng-blur, ng-click, ng-focus, ng-mousedown, ng-mousemove and many others. 
+          </p>
+         <h3>CODE</h3>
+          <pre>
+            &lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+  
+            &lt;button ng-click="myFunction()"&gt;Click me!&lt;/button&gt;
+  
+            &lt;p&gt;<code ng-non-bindable>{{ count }}</code>&lt;/p&gt;
+  
+            &lt;/div&gt;
+            &lt;script&gt;
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope) {
+            $scope.count = 0;
+            $scope.myFunction = function() {
+            $scope.count++;
+            }
+            });
+            &lt;/script&gt;
+          </pre>
+          <h3>OUTPUT</h3>
+          <p>
+            <button type="button" ng-click="counterButtonClick()">Please press me</button><br />
+           <br> You clicked me {{buttonClickCounter}} times. 
+          </p>
+          <h3>EXPLANATION</h3>
+          <p>The ng-click directive defines AngularJS code that will be executed when the element is being clicked.
+            So the number of clicks increases when button is clicked by user.
+          </p>
+        </div>
+
+        <!-- ----------------------------------------------------------------------------- -->
+        <div id="formAndValidation" ng-show="divId == '5'">
+          <h3>Input Validations</h3>
+          <hr />
+          <p>AngularJS offers client-side form validation. AngularJS monitors the state of the form and input fields 
+            (input, textarea, select), and lets you notify the user about the current state.</p>
+          <h3>CODE</h3>
+          <code>
+          <pre id="example4-code"></pre>
+        </code>
+          <h3>OUTPUT</h3>
+          <div>
+            <form name="myForm">
+              <input name="myEmail" ng-model="myEmail" type="email" />
+            </form>
+            <p>Is the email valid? {{myForm.myEmail.$valid}}</p>
+          </div>
+          <h3>EXPLANATION</h3>
+          <p>
+            A very good feature of AngularJS is input validation. As every application needs some kind of validation, this feature verifies and 
+           validation. In the above code snippet, we used to ensure that the input is a valid emails.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

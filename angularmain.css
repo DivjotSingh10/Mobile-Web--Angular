@@ -1,0 +1,116 @@
+#top
+{
+	display:block;
+	width:100%;
+	color:#fff;
+	background-color:#86af49;
+	position: fixed; 
+  top: 0; 
+  margin-bottom:10px;
+	
+}
+
+body
+{
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+}
+
+#top h1{
+	padding-left:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#top h1 img
+{
+	vertical-align: middle;
+	margin-right:10px;
+}
+
+.leftDiv
+{
+	width:20%;
+	float:left;
+  background-color:#b5e7a0;
+  margin-top:0px;
+}
+
+.rightDiv
+{
+	width:80%;
+	float:left;
+	height: -moz-calc(100% - 50px);
+	height: -webkit-calc(100%  - 50px); 
+	height: calc(100% - 50px);
+  background-color:#e3eaa7;
+ color:black;
+
+	overflow:auto;
+}
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 100%; /* Set the width of the sidebar */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #0c0a0a;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  background: #ddd;
+  color: black;
+}
+
+h2{
+	padding-left:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+	color:white;
+}
+
+#top a{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+	
+}
+
+#top a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  margin-top: 60px; /* Add a top margin to avoid content overlay */
+  width:100%;
+  
+}
+
+
+.content{
+	padding:10px;
+	width: -moz-calc(100% - 20px); /* Firefox */
+	width: -webkit-calc(100% - 20px); /* Chrome, Safari */
+	width: calc(100% - 20px);
+	
+	
+}
+
+pre
+{
+	background-color:#fff;
+}
